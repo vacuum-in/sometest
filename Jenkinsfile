@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('get git') {
       steps {
-        git(url: 'https://github.com/vacuum-in/sometest', branch: 'master')
+        git(url: 'https://github.com/vacuum-in/test1', branch: 'master')
       }
     }
   }
