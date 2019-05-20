@@ -20,7 +20,7 @@ pipeline {
                     transfers: [
                       sshTransfer(
                         sourceFiles: "/var/lib/jenkins/workspace/sometest_master/one.php",
-                        remoteDirectory: "/test/",
+                        remoteDirectory: "/test",
                         execCommand: "echo 'test' >> /root/test.txt"
                       )
                     ])
