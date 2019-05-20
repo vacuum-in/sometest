@@ -20,6 +20,7 @@ pipeline {
                     transfers: [
                       sshTransfer(
                         sourceFiles: "/var/lib/jenkins/workspace/sometest_master/one.php",
+                        removePrefix: "/var/lib/jenkins/workspace/sometest_master/",
                         remoteDirectory: "/test",
                         execCommand: "echo 'test' >> /root/test.txt"
                       )
