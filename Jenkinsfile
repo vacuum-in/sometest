@@ -19,7 +19,7 @@ pipeline {
                     verbose: true,
                     transfers: [
                       sshTransfer(
-                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/one.php"
+                        sourceFiles: "**/one.php"
                       )
                     ])
                   ])
