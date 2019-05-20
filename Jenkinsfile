@@ -19,7 +19,7 @@ pipeline {
                     verbose: true,
                     transfers: [
                       sshTransfer(
-                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/one.php",
+                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/*.*",
                         removePrefix: "/var/lib/jenkins/workspace/sometest_master/",
                         remoteDirectory: "/test",
                         execCommand: "echo 'test' >> /root/test.txt"
