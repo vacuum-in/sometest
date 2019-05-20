@@ -12,7 +12,7 @@ pipeline {
           stage('SSH transfer') {
             script {
               sshPublisher(
-                continueOnError: false, failOnError: true,
+                continueOnError: false,
                 publishers: [
                   sshPublisherDesc(
                     configName: "testsrv",
