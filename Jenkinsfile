@@ -19,9 +19,9 @@ pipeline {
                     verbose: true,
                     transfers: [
                       sshTransfer(
-                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/*",
+                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/*.*",
                         remoteDirectory: "/test/",
-                        execCommand: "echo 'test' >> /root/home/test.txt"
+                        execCommand: "echo 'test' >> /root/test.txt"
                       )
                     ])
                   ])
