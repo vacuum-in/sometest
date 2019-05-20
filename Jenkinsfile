@@ -8,8 +8,28 @@ pipeline {
     }
     stage('build') {
       steps {
-        build '1'
+        script {
+          stage('SSH transfer') {
+            script {
+              sshPublisher(
+                continueOnError: false, failOnError: true,
+                publishers: [
+                  sshPublisherDesc(
+                    configName: "testsrv",
+                    verbose: true,
+                    transfers: [
+                      sshTransfer(
+                        sourceFiles: "/var/lib/jenkins/workspace/sometest_master/*",
+                        remoteDirectory: "/test/",
+                        execCommand: "echo 'test' >> /root/home/test.txt"
+                      )
+                    ])
+                  ])
+                }
+              }
+            }
+
+          }
+        }
       }
     }
-  }
-}
